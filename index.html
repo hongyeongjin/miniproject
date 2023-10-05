@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀 소개하기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .teamname {
+            height: 250px;
+            margin-bottom: 30px; 
+            
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            
+        }
+        .teamname > button {
+            margin-left: auto;
+        }
+        .teamint {
+            background-color: green;
+            width: 500px;
+            height: 200px;
+            color: white;
+            margin-bottom: 50px;
+            margin: 0px auto 0px auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .teamcards {
+            width: 1200px;
+            margin: 30px auto 0px auto;
+        }
+
+        .teambox {
+            width: 500px;
+            margin: 30px auto 0px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 3px 1px blue;
+            border-radius: 5px;
+        }
+
+        .teambtn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+
+        .teambtn > button {
+            margin-right: 10px;
+        }
+
+    </style>
+    <script>
+        function openclose() {
+            $('#tbox').toggle();
+        }
+
+        function makeCard() {
+            let image = $('#image').val();
+            let name = $('#name').val();
+            let MBTI = $('#MBTI').val();
+            let TMI = $('#TMI').val();
+
+            let tmep_html = `
+            <div class="col">
+                <div class="card h-100">
+                    <img src="${image}"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${name}</h5>
+                        <p class="card-text">${MBTI}</p>
+                        <p class="card-text">${TMI}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">자세히 보기</small>
+                    </div>
+                </div>
+            </div>`;
+            $('#card').append(tmep_html);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="teamname">
+        <h1 id="title">팀명</h1>
+        <button onclick="openclose()" type="button" class="btn btn-primary btn-sm">팀원 추가하기</button>
+    </div>
+    <div class="teamint">
+        <h1>팀 간단한 설명</h1>
+    </div>
+    <div class="teambox" id="tbox">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="image" placeholder="사진">
+            <label for="floatingInput">사진</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="name" placeholder="이름">
+            <label for="floatingInput">이름</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="MBTI" placeholder="MBTI">
+            <label for="floatingInput">MBTI</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="TMI" placeholder="TMI">
+            <label for="floatingInput">TMI</label>
+        </div>
+        <div class="teambtn">
+            <button onclick="makeCard()" type="button" class="btn btn-outline-primary">추가하기</button>
+            <button type="button" class="btn btn-light">닫기</button>
+        </div>
+    </div>
+    <div class="teamcards">
+        <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1446768500601-ac47e5ec3719?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1446&q=80"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">이름</h5>
+                        <p class="card-text">MBTI</p>
+                        <p class="card-text">TMI</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">자세히 보기</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1446768500601-ac47e5ec3719?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1446&q=80"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">이름</h5>
+                        <p class="card-text">MBTI</p>
+                        <p class="card-text">TMI</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">자세히 보기</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1446768500601-ac47e5ec3719?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1446&q=80"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">이름</h5>
+                        <p class="card-text">MBTI</p>
+                        <p class="card-text">TMI</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">자세히 보기</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1446768500601-ac47e5ec3719?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1446&q=80"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">이름</h5>
+                        <p class="card-text">MBTI</p>
+                        <p class="card-text">TMI</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">자세히 보기</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
